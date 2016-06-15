@@ -1,4 +1,4 @@
-angular.module('Arcadia.controller', [])
+angular.module('Arcadia')
 
 .controller("mainCtrl", function($scope, $timeout) {
     $scope.login = "Monsieur";
@@ -18,11 +18,6 @@ angular.module('Arcadia.controller', [])
         $scope.fadein = true;
         console.log("2")
     }, 0);
-    $scope.hideOverlay = function() {
-        console.log("1")
-
-
-    };
 })
 .controller("timeCtrl", function($scope, $timeout) {
     //$scope.clock = ""; // initialise the time variable

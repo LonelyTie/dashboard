@@ -1,1 +1,1 @@
-var app = angular.module("Arcadia", ['Arcadia.controller']);
+var app = angular.module("Arcadia", []);
