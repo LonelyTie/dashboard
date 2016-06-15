@@ -1,0 +1,37 @@
+<!doctype html>
+<html  ng-app="Arcadia">
+    <head>
+        <title>Arcadia</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script type="text/javascript" src="lib/Angular/angular.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/controller.js"></script>
+    </head>
+    <body ng-controller="mainCtrl" class="ng-scope" ng-init="callImgs()">
+        <div id="background" style="background-image: url('backgrounds/{{image}}.jpg')">
+            <div class="fadein-overlay" ng-class="{'fadein-off' : fadein}" ></div>
+            <div id="center-above"></div>
+            <div id="center" ng-controller="timeCtrl">
+                <h1 id="clock">{{clock | date:'h:mm'}}</h1>
+                <h2 id="hello">Bon{{period}} {{login}}</h2>
+            </div>
+            <div id="center-below"></div>
+            <div id=bottom>
+                <div id="quote" >
+                    <blockquote class="quote" ng-mouseleave="setQuoteLeave()" ng-mouseover="setQuoteHover()">
+                        <p class="quote-body" ng-class="{'quote-body-hover' : quoteHover}">
+                            <span class="quote-body-text">
+                                "L'important c'est pas de gagner la course, c'est de se faire des amis."
+                            </span>
+                            <span class="quote-source" ng-class="{'quote-source-hover' : quoteHover}">
+                                <span class="quote-source-text">
+                                    ajodin
+                                </span>
+                            </span>
+                        </p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

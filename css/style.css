@@ -1,0 +1,147 @@
+body {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 1em;
+    text-shadow: 0 1px 5px rgba(0,0,0,.1);
+	color: #fff;
+}
+
+h1 {
+	text-align: center;
+	line-height: 1;
+	padding: 0;
+	margin: 0;
+	color: #fff;
+	letter-spacing: -5px;
+	font-size: 1125%;
+	font-weight: 500;
+}
+
+.fadein-overlay {
+	position: absolute;
+	top: 0; left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: white;
+	z-index: +10;
+   opacity: 1;
+   transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+
+.fadein-off {
+	opacity: 0;
+	z-index: 0;
+}
+
+
+
+#background {
+	position: absolute;
+	top: 0; left: 0;
+	right: 0;
+	bottom: 0;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+#bottom, #bottom-left, #bottom-right, #center, #center-above, #center-below, #top-left, #top-right {
+    position: absolute;
+    z-index: 3;
+}
+
+#center, #center-above, #center-below {
+    display: block;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    -webkit-transform: translate(-50%,-50%);
+}
+
+#center-above, #center-below {
+	left: 0;
+    top: 72.5%;
+    -webkit-transform: translate(0,0);
+    text-align: center;
+}
+
+#center-above {
+    top: 0;
+    z-index: 1;
+}
+
+#center {
+    z-index: 4;
+}
+
+#bottom {
+	width: 50%;
+	bottom: 0;
+	left: 50%;
+	opacity: 1;
+	-webkit-transform: translateX(-50%);
+}
+
+#clock {
+	display: inline-block;
+    position: relative;
+}
+
+#hello {
+	font-size: 337.5%;
+    letter-spacing: 0;
+    white-space: nowrap;
+	margin-top: 0;
+}
+
+.quote {
+    height: 57px;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 3px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.quote-body, .quote-source {
+    margin: 0;
+    color: rgba(255,255,255,.9);
+    line-height: 115%;
+    transition: all .35s ease;
+}
+
+.quote-body {
+    width: 100%;
+    display: block;
+    position: relative;
+    font-size: 110%;
+    font-weight: 300;
+}
+
+.quote-body-hover {
+	-webkit-transform: translateY(-20px);
+}
+
+.quote-source {
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+    left: 0;
+    font-size: 80%;
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transition-delay: 0s;
+}
+
+.quote-source-hover {
+	-webkit-transform: translateY(6px);
+	opacity: 1;
+}
+
+.quote-source-text {
+    margin-right: 3px;
+    opacity: .75;
+}
