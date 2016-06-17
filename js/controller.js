@@ -1,9 +1,10 @@
 angular.module('Arcadia')
 
 .controller("mainCtrl", function($scope, $timeout) {
+    var totalPictures = 38;
     $scope.login = "Monsieur";
 	$scope.callImgs = function() {
-		var nbr = Math.floor((Math.random() * 37) + 1);
+		var nbr = Math.floor((Math.random() * totalPictures) + 1);
 		$scope.image = nbr;
 	};
     $scope.setQuoteHover = function() {
@@ -20,7 +21,8 @@ angular.module('Arcadia')
     }, 0);
 })
 .controller("timeCtrl", function($scope, $timeout) {
-    //$scope.clock = ""; // initialise the time variable
+    //$scope.clock = ""; // initialise
+     the time variable
     $scope.clock = Date.now(); // get the current time
     $scope.tickInterval = 1000; //ms
     var getPeriod = function() {
