@@ -21,8 +21,7 @@ angular.module('Arcadia')
     }, 0);
 })
 .controller("timeCtrl", function($scope, $timeout) {
-    //$scope.clock = ""; // initialise
-     the time variable
+    //$scope.clock = ""; // initialise the time variable
     $scope.clock = Date.now(); // get the current time
     $scope.tickInterval = 1000; //ms
     var getPeriod = function() {
@@ -30,10 +29,10 @@ angular.module('Arcadia')
 //        if (date.getHours() >= 5 && date.getHours() <= 12) {
 //            return "morning";
 //        }
-        if (date.getHours() >= 5 && date.getHours() <= 18) {
+        if (date.getHours() >= 5 && date.getHours() <= 16) {
             return "jour"
         }
-        if (date.getHours() >= 19 && date.getHours() <= 4) {
+        if ((date.getHours() >= 17 && date.getHours() <= 23) || date.getHours() <= 4) {
             return "soir";
         }
     }
