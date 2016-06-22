@@ -1,20 +1,31 @@
 <!doctype html>
-<html  ng-app="Arcadia">
+<html  ng-app="Arcadia" ng-csp>
     <head>
         <title>Arcadia</title>
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/angular-aside.css">
         <link rel="stylesheet" href="css/style.css">
         <script type="text/javascript" src="lib/Angular/angular.min.js"></script>
+        <script src="lib/bootstrap/ui-bootstrap-tpls.min.js"></script>
+        <script src="lib/Angular/angular-aside.js"></script>
         <script src="js/app.js"></script>
         <script src="js/controller.js"></script>
+        <script src="js/directives.js"></script>
     </head>
-    <body ng-controller="mainCtrl" class="ng-scope" ng-init="callImgs()">
+    <body>
+        <div ng-controller="mainCtrl" class="ng-scope" ng-init="callImgs()">
         <div id="background" style="background-image: url('backgrounds/{{image}}.jpg')">
             <div class="fadein-overlay" ng-class="{'fadein-off' : fadein}" ></div>
             <div id="center-above"></div>
+                        <span class="pull-left" ng-click="openAside('left', true)">
             <div id="center" ng-controller="timeCtrl">
                 <h1 id="clock">{{clock | date:'h:mm'}}</h1>
                 <h2 id="hello">Bon{{period}} {{login}}</h2>
             </div>
+
+
+</span>
             <div id="center-below"></div>
             <div id=bottom>
                 <div id="quote" >
@@ -33,5 +44,7 @@
                 </div>
             </div>
         </div>
+    </div>
+
     </body>
 </html>

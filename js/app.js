@@ -1,1 +1,1 @@
-var app = angular.module("Arcadia", []);
+var app = angular.module("Arcadia", ['ui.bootstrap', 'ngAside']);

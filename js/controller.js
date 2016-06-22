@@ -1,6 +1,6 @@
-angular.module('Arcadia')
+angular.module('Arcadia', ['ui.bootstrap', 'ngAside'])
 
-.controller("mainCtrl", function($scope, $timeout) {
+.controller("mainCtrl", function($scope, $timeout, $aside) {
     var totalPictures = 38;
     $scope.login = "Monsieur";
 	$scope.callImgs = function() {
@@ -19,6 +19,47 @@ angular.module('Arcadia')
         $scope.fadein = true;
         console.log("2")
     }, 0);
+
+    $scope.getRandomNbr = function(digits) {
+        var nbr = Integer.valueOf(String.valueOf(Math.floor(Math.random() * (digits * 10) + 1)), 16);
+        console.log(nbr);
+        return nbr;
+    };
+
+    /*
+     *  Modal part
+     */
+    $scope.asideState = {
+  open: false
+};
+
+$scope.openAside = function(position, backdrop) {
+  $scope.asideState = {
+    open: true,
+    position: position
+  };
+
+  function postClose() {
+    $scope.asideState.open = false;
+  }
+
+  $aside.open({
+    templateUrl: 'views/aside.html',
+    placement: position,
+    size: 'lg',
+    backdrop: backdrop,
+    controller: function($scope, $uibModalInstance) {
+      $scope.ok = function(e) {
+        $uibModalInstance.close();
+        e.stopPropagation();
+      };
+      $scope.cancel = function(e) {
+        $uibModalInstance.dismiss();
+        e.stopPropagation();
+      };
+    }
+  }).result.then(postClose, postClose);
+}
 })
 .controller("timeCtrl", function($scope, $timeout) {
     //$scope.clock = ""; // initialise the time variable
