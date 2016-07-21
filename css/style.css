@@ -5,6 +5,10 @@ body {
 	color: #fff;
 }
 
+html {
+	font-size: 16px;
+}
+
 h1 {
 	text-align: center;
 	line-height: 1;
