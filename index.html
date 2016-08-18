@@ -28,15 +28,15 @@
 </span>
             <div id="center-below"></div>
             <div id=bottom>
-                <div id="quote" >
+                <div id="quote" ng-init="getRandomQuote()" >
                     <blockquote class="quote" ng-mouseleave="setQuoteLeave()" ng-mouseover="setQuoteHover()">
                         <p class="quote-body" ng-class="{'quote-body-hover' : quoteHover}">
                             <span class="quote-body-text">
-                                "L'important c'est pas de gagner la course, c'est de se faire des amis."
+                                "{{quote.quote}}"
                             </span>
                             <span class="quote-source" ng-class="{'quote-source-hover' : quoteHover}">
                                 <span class="quote-source-text">
-                                    ajodin
+                                    {{quote.autor}}
                                 </span>
                             </span>
                         </p>

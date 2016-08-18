@@ -1,7 +1,7 @@
 angular.module('Arcadia', ['ui.bootstrap', 'ngAside'])
 
-.controller("mainCtrl", function($scope, $timeout, $aside) {
-    var totalPictures = 47;
+.controller("mainCtrl", function($scope, $timeout, $aside, $http) {
+    var totalPictures = 49;
     $scope.login = "Monsieur";
 	$scope.callImgs = function() {
 		var nbr = Math.floor((Math.random() * totalPictures) + 1);
@@ -13,11 +13,16 @@ angular.module('Arcadia', ['ui.bootstrap', 'ngAside'])
     $scope.setQuoteLeave = function() {
         $scope.quoteHover = false;
     };
+    $scope.getRandomQuote = function() {
+        quotes = $http.get("/misc/quotes.json").then(function(response) {
+            var quoteIndex =  Math.floor(Math.random() * response.data.quotes.length);
+            $scope.quote = response.data.quotes[quoteIndex];
+        })
+    }
     $scope.quoteHover = false;
     $scope.fadein = false;
     $timeout(function () {
         $scope.fadein = true;
-        console.log("2")
     }, 0);
 
     $scope.getRandomNbr = function(digits) {
