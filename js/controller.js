@@ -1,7 +1,7 @@
 angular.module('Arcadia', ['ui.bootstrap', 'ngAside'])
 
 .controller("mainCtrl", function($scope, $timeout, $aside, $http) {
-    var totalPictures = 65;
+    var totalPictures = 77;
     $scope.login = "Monsieur";
 	$scope.callImgs = function() {
 		var nbr = Math.floor((Math.random() * totalPictures) + 1);
